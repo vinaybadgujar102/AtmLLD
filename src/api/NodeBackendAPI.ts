@@ -1,4 +1,5 @@
 import { CreateTransactionDTO } from "../dtos/CreateTransactioDTO";
+import { UpdateATMStateDTO } from "../dtos/UpdateATMStateDTO";
 import { BackendAPI } from "./BackendAPI";
 
 export class NodeBackendAPI implements BackendAPI {
@@ -11,5 +12,11 @@ export class NodeBackendAPI implements BackendAPI {
 
     // 3. return response
     return Math.floor(Math.random() * 1000);
+  }
+
+  updateState(updateATMStateDTO: UpdateATMStateDTO): boolean {
+    // assume that there is implementation
+
+    return true;
   }
 }

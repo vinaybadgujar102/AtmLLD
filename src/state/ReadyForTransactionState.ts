@@ -1,12 +1,12 @@
 import { BackendAPI } from "../api/BackendAPI";
-import { NodeBackendAPI } from "../api/NodeBackendAPI";
 import { CreateTransactionDTO } from "../dtos/CreateTransactioDTO";
 import { AtmState } from "../enums/ATMState";
 import { ATM } from "../models/ATM";
 import { Card } from "../models/Card";
+import { ReadCardDetailsAndPinState } from "./ReadCardDetailsAndPinState";
 import { State } from "./State";
 
-export class ReadyForTransaction implements State {
+export class ReadyForTransactionState implements State {
   private atm: ATM;
   private backendAPI: BackendAPI;
 
@@ -24,6 +24,8 @@ export class ReadyForTransaction implements State {
     if (transactionId === 0) {
       throw new Error("Failed to create transaction");
     }
+
+    this.atm.changeState(new ReadCardDetailsAndPinState());
     return transactionId;
   }
   readCardDetailsAndPin(card: Card): boolean {

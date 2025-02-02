@@ -1,15 +1,17 @@
+import { CardType } from "../enums/CardType";
+
 export class Card {
   private cardNumber: string;
   private pin: string;
   private name: string;
-  private cardType: string;
+  private cardType: CardType;
   private bankName: string;
 
   constructor(
     cardNumber: string,
     pin: string,
     name: string,
-    cardType: string,
+    cardType: CardType,
     bankName: string
   ) {
     this.cardNumber = cardNumber;
@@ -35,7 +37,7 @@ export class Card {
     return this.bankName;
   }
 
-  public getCardType(): string {
+  public getCardType(): CardType {
     return this.cardType;
   }
 
