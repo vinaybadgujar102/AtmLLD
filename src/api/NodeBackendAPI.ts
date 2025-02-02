@@ -1,4 +1,5 @@
 import { CreateTransactionDTO } from "../dtos/CreateTransactioDTO";
+import { GetATMAmountDTO } from "../dtos/GetATMAmountDTO";
 import { UpdateATMStateDTO } from "../dtos/UpdateATMStateDTO";
 import { BackendAPI } from "./BackendAPI";
 
@@ -18,5 +19,11 @@ export class NodeBackendAPI implements BackendAPI {
     // assume that there is implementation
 
     return true;
+  }
+
+  getAtmAmount(getATMAmountDTO: GetATMAmountDTO): number {
+    // assume that there is implementation
+
+    return Math.floor(Math.random() * 1000);
   }
 }
